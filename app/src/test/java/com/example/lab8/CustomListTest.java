@@ -35,6 +35,11 @@ public class CustomListTest {
         assertEquals(list.getCount(),listSize +1);
     }
 
+    /**
+     * create a mock list
+     * add a city to the list
+     * check if the city is in the list
+     */
     @Test
     void hasCityTest() {
         list = MockCityList();
@@ -43,6 +48,13 @@ public class CustomListTest {
         assertTrue(list.hasCity(city));
     }
 
+    /**
+     * create a mock list
+     * add a city to the list
+     * check if the city is in the list
+     * delete the city from the list
+     * check if the city is no longer in the list
+     */
     @Test
     void deleteCityTest() {
         list = MockCityList();
@@ -50,6 +62,16 @@ public class CustomListTest {
         list.addCity(city);
         assertEquals(list.getCount(),1);
         list.deleteCity(city);
+        assertEquals(list.getCount(),0);
+    }
+
+    /**
+     * create a mock list
+     * check if the list is empty
+     */
+    @Test
+    void getCountTest() {
+        list = MockCityList();
         assertEquals(list.getCount(),0);
     }
 
